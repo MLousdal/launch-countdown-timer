@@ -1,31 +1,16 @@
-// Kode til at toggle burger menuen
-function burgerToggle() {
-    const navLinks = document.querySelector("#nav-links");
-    // Hvis navLinks er vist, skjul den da
-    if (navLinks.style.display === "block") {
-        navLinks.style.display = "none";
-    // ellers vis den
-    } else {
-        navLinks.style.display = "block";
-    }
-}
+const countDownDate = new Date("Aug 3, 2021 12:00:00").getTime();
 
-// Scroll to top button, based on example from w3schools (https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
-toTopBtn = document.querySelector("#toTopBtn");
+let countDownTimer = setInterval(function() {
+  let now = new Date().getTime();
+  let timeleft = countDownDate - now;
 
-// Denne kode gør at knappen dukker op når brugeren har rullet 20px ned ad siden
-window.onscroll = function() {scrollFunction()};
+  var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    toTopBtn.style.display = "block";
-  } else {
-    toTopBtn.style.display = "none";
-  }
-}
-
-// Ved tryg på knappen vil brugeren blive scrollet tilbage til toppen af dokumentet
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+  document.querySelector("#days").innerHTML = days;
+  document.querySelector("#hours").innerHTML = hours;
+  document.querySelector("#minutes").innerHTML = minutes;
+  document.querySelector("#seconds").innerHTML = seconds;
+}, 1000)

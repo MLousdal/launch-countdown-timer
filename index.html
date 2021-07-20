@@ -17,19 +17,39 @@
   <title>Frontend Mentor | Launch countdown timer</title>
 
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; position: absolute; bottom: 0; left: calc(50% - 140px); }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
-
-  We're launching soon
-
-  Days
-  Hours
-  Minutes
-  Seconds
-  
+<body class="center-flex ">
+  <div class="wrapper center-flex column-flex">
+    <h1 class="uppercase text-neutral-white center-text margin-xl-bottom">We're launching soon</h1>
+    <section class="timer-grid">
+      <div class="grid-item">
+        <div id="days"></div>
+        <span class="uppercase">Days</span>
+      </div>
+      <div class="grid-item">
+        <div id="hours"></div>
+        <span class="uppercase">Hours</span>
+      </div>
+      <div class="grid-item">
+        <div id="minutes"></div>
+        <span class="uppercase">Minutes</span>
+      </div>
+      <div class="grid-item">
+        <div id="seconds"></div>
+        <span class="uppercase">Seconds</span>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <ul class="center-flex gap-flex">
+      <li><a href="#"><img src="assets/images/icon-facebook.svg" alt class="icon-footer"></a></li>
+      <li><a href="#"><img src="assets/images/icon-pinterest.svg" alt class="icon-footer"></a></li>
+      <li><a href="#"><img src="assets/images/icon-instagram.svg" alt class="icon-footer"></a></li>
+    </ul>
+  </footer>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/MLousdal">MLousdal</a>.
